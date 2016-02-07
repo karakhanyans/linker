@@ -62,6 +62,16 @@ function save_link(){
                 }else{
                     alert('false');
                 }
+            },
+            error: function () {
+                $('.add-link').html('<i class="fa fa-times"></i>').css({'backgroundColor':'#c9302c'});
+                $('.link-value').css({'border-color':'#c9302c'});
+                setTimeout(function () {
+                    $('.link-value').val('').css({'border-color':'#ccc'});
+                    $('.add-link').html('Add').css({'backgroundColor':'#2fe387'});
+                },3000);
+
+
             }
         });
     }
