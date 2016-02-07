@@ -268,6 +268,7 @@ class UsersController extends Controller {
 			'VU'=>'Vanuatu',
 			'WF'=>'Wallis and Futuna'
 		];
+		dd($countries);
 		return view('profile.profile',compact('countries'));
 	}
 
