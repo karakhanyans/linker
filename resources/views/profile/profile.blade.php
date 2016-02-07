@@ -10,6 +10,7 @@
                             <a class="be-ava-user style-2" href="page1.html">
                                 <img src="img/ava_10.jpg" alt="">
                             </a>
+
                             <p class="be-use-name">{!! Auth::user()->name !!} {!! Auth::user()->lastname !!}</p>
                             <div class="be-user-info">
                             </div>
@@ -27,223 +28,30 @@
                 <div class="col-xs-12 col-md-8">
                     <div class="tab-wrapper style-1">
                         <div class="tab-nav-wrapper">
-                            <div  class="nav-tab  clearfix">
-                                <div class="nav-tab-item active">
-                                    <span>Projects</span>
-                                </div>
-                                <div class="nav-tab-item ">
-                                    <span>Work In Progress</span>
-                                </div>
-                                <div class="nav-tab-item ">
-                                    <span>Appreciated</span>
-                                </div>
-                                <div class="nav-tab-item ">
-                                    <span>Collections</span>
+                            {{--<div  class="nav-tab  clearfix">--}}
+                                {{--<div class="nav-tab-item active">--}}
+                                    {{--<span>Projects</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="nav-tab-item ">--}}
+                                    {{--<span>Work In Progress</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="nav-tab-item ">--}}
+                                    {{--<span>Appreciated</span>--}}
+                                {{--</div>--}}
+                                {{--<div class="nav-tab-item ">--}}
+                                    {{--<span>Collections</span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        </div>
+
+                        <div class="tabs-content clearfix">
+                            <div class="loading">
+                                <div class="load-icon">
+                                    <i class="fa fa-refresh fa-spin fa-2x text-success"></i>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tabs-content clearfix">
                             <div class="tab-info active">
-                                <div class="row">
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p1.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">The kitsch destruction of our world</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a1.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p2.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Treebeard</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a2.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p3.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Colors of Ramadan</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a3.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p6.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Fran Ewald for The Diaries Project</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a6.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p7.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">raindrops monochrome</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a7.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p8.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Racing Queensland</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a7.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p13.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Stay Ahead Series</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a6.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p14.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Faber-Castell / Psychological Problems</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a5.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-ml-12 col-xs-6 col-sm-4">
-                                        <div class="be-post">
-                                            <a href="page1.html" class="be-img-block">
-                                                <img src="img/p15.jpg" alt="omg">
-                                            </a>
-                                            <a href="page1.html" class="be-post-title">Garry Simpson - Bridges - Intelligent Life Magazinen</a>
-											<span>
-												<a href="page1.html" class="be-post-tag">Interaction Design</a>,
-												<a href="page1.html" class="be-post-tag">UI/UX</a>,
-												<a href="page1.html" class="be-post-tag">Web Design</a>
-											</span>
-                                            <div class="author-post">
-                                                <img src="img/a1.png" alt="" class="ava-author">
-                                                <span>by <a href="page1.html">Hoang Nguyen</a></span>
-                                            </div>
-                                            <div class="info-block">
-                                                <span><i class="fa fa-thumbs-o-up"></i> 360</span>
-                                                <span><i class="fa fa-eye"></i> 789</span>
-                                                <span><i class="fa fa-comment-o"></i> 20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div id="links-block" class="row"></div>
                             </div>
                             <div class="tab-info">
                                 <div class="row">

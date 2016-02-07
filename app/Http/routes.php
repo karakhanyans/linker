@@ -18,6 +18,9 @@
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('/', 'UsersController');
+	Route::post('get_links','UsersController@get_links');
+	Route::post('/link/save', 'LinksController@store');
+	Route::delete('/link/delete/{id}', 'LinksController@destroy');
 });
  Route::controllers([
 		'auth' => 'Auth\AuthController',

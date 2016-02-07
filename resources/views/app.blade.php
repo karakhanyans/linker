@@ -7,7 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" href="{{ asset('/img/favicon.png') }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<link rel="stylesheet" href="{{ asset('/style/bootstrap.min.css') }}">
+
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 	<link rel="stylesheet" href="{{ asset('/style/icon.css') }}">
 	<link rel="stylesheet" href="{{ asset('/style/loader.css') }}">
@@ -75,7 +77,7 @@
 								<form action="#">
 									<div class="form-group">
 										<div class="input-group">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control link-value">
 											<span class="add-link input-group-addon">Add</span>
 										</div>
 									</div>
@@ -410,6 +412,7 @@
 	<script src="{{ asset('/script/filters.js') }}"></script>
 	<script src="{{ asset('/script/global.js') }}"></script>
 	<script src="{{ asset('/script/scripts.js') }}"></script>
+
 </body>
 
 </html>

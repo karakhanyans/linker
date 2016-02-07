@@ -16,13 +16,18 @@ class CreateLinksTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('link');
-			$table->integer('user_id');
+			$table->integer('user_id')->unsigned();
 			$table->integer('category_id');
 			$table->string('title');
 			$table->string('image');
 			$table->string('tags');
 			$table->integer('views');
 			$table->timestamps();
+
+			$table->foreign('user_id')
+				->references('id')
+				->on('users')
+				->onDelete('cascade');
 		});
 	}
 

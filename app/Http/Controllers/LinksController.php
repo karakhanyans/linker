@@ -1,11 +1,12 @@
 <?php namespace App\Http\Controllers;
+use App\Link;
 use App\Http\Requests;
-use App\User;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UsersController extends Controller {
+class LinksController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,17 +15,7 @@ class UsersController extends Controller {
 	 */
 	public function index()
 	{
-
-		return view('profile.profile',compact('countries'));
-	}
-
-	public function get_links()
-	{
-		$links = User::find(Auth::user()->id)
-			->link()
-			->orderBy('created_at','desc')
-			->get();
-		return $links;
+		//
 	}
 
 	/**
@@ -42,9 +33,29 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$link = $request->all();
+		$linkInform = file_get_html($link['link']);
+
+		$data['link']  = $link['link'];
+		$data['user_id']  = $request->user()->id;
+		$data['title'] = $linkInform->find('title',0)->innertext;
+		$tags = $linkInform->find('meta[name="keywords"]',0);
+		$description = $linkInform->find('meta[name="description"]',0);
+		if(!empty($tags)){
+			$data['tags'] = $tags->content;
+		}elseif(!empty($description)){
+			$data['tags'] = $description->content;
+		}else{
+			$data['tags'] = '';
+		}
+
+		if(Link::firstOrCreate($data)){
+			echo 'true';
+		}else{
+			echo 'false';
+		}
 	}
 
 	/**
@@ -88,7 +99,13 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$link = Link::find($id);
+
+		if($link->delete()){
+			echo 'true';
+		}else{
+			echo 'false';
+		}
 	}
 
 }

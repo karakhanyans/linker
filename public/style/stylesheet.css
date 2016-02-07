@@ -3718,3 +3718,33 @@ body .login-user-down:hover {
     background: #2ecc71 !important;
 }
 
+.link-delete {
+    position: absolute;
+    z-index: 2222;
+    right: 20px;
+    top: 2px;
+    opacity: 0;
+}
+.link:hover .link-delete{
+    opacity: .2;
+}
+.link:hover .link-delete:hover{
+    opacity: .8;
+}
+.loading{
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.8);
+}
+.loading .load-icon{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    margin-left: -20px;
+}
