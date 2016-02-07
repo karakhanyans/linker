@@ -74,14 +74,14 @@
 						<li><a href="organization.html">Organization</a></li>
 						<li id="ad-work-li"><a id="add-work-btn" class="btn color-1"><i class="fa fa-plus"></i></a>
 							<div id="add-link">
-								<form action="#">
+
 									<div class="form-group">
 										<div class="input-group">
 											<input type="text" class="form-control link-value">
 											<span class="add-link input-group-addon">Add</span>
 										</div>
 									</div>
-								</form>
+							
 							</div>
 						</li>
 					</ul>
