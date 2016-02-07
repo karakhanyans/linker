@@ -2,7 +2,7 @@
 use App\Link;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Parser\simply_html_dom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
