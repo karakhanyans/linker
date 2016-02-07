@@ -86,6 +86,11 @@ $(document).ready(function () {
     $('.add-link').click(function(){
        save_link();
     });
+    $('.link-value').keydown(function(e){
+        if(e.which == 13){
+            save_link();
+        }
+    });
     $(document).on('click','.link-delete',function(){
         var link = $(this);
         var id = link.data('id');
