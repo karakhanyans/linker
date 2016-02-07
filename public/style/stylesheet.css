@@ -3680,6 +3680,11 @@ body .behance-style .creative_filds_block a:hover {
     border-color: #2ecc71 !important;
     color: #fff;
     cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 #add-link .add-link:hover{
     background-color: #2fe387;
@@ -3717,7 +3722,13 @@ body .behance-style .creative_filds_block a:hover {
 body .login-user-down:hover {
     background: #2ecc71 !important;
 }
-
+.link-value{
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
 .link-delete {
     position: absolute;
     z-index: 2222;
