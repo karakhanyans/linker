@@ -32,7 +32,7 @@
 
 <div class="be-loader">
 	<div class="spinner">
-		<img src="{{ asset('/img/logo-loader.png') }}"  alt="">
+{{--		<img src="{{ asset('/img/logo-loader.png') }}"  alt="">--}}
 		<p class="circle">
 			  <span class="ouro">
 			    <span class="left"><span class="anim"></span></span>
