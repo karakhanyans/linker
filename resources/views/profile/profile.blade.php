@@ -16,7 +16,7 @@
                             </div>
                         </div>
                         <div class="be-user-statistic">
-                            <div class="stat-row clearfix"><i class="stat-icon icon-views-b"></i> Projects views<span class="stat-counter">218098</span></div>
+                            <div class="stat-row clearfix"><i class="stat-icon icon-views-b"></i>Links count<span class="stat-counter links_count"></span></div>
                             <div class="stat-row clearfix"><i class="stat-icon icon-like-b"></i>Appreciations<span class="stat-counter">14335</span></div>
                             <div class="stat-row clearfix"><i class="stat-icon icon-followers-b"></i>Followers<span class="stat-counter">2208</span></div>
                             <div class="stat-row clearfix"><i class="stat-icon icon-following-b"></i>Following<span class="stat-counter">0</span></div>

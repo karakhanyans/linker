@@ -16,6 +16,8 @@ function get_links(){
             if(links != undefined){
             $('#links-block').html('');
                 var link;
+                var link_count = links.link.length;
+                $('.links_count').html(link_count);
             for(var i = 0;links.link.length > i;i++){
                 link = links.link[i];
                 $('#links-block').append('' +
@@ -66,11 +68,11 @@ function save_link(){
                 }
             },
             error: function () {
-                $('.add-link').html('<i class="fa fa-times"></i>').css({'backgroundColor':'#c9302c'});
+                $('.add-link').html('<i class="fa fa-times"></i>').css({'backgroundColor':'#c9302c','borderColor':'#c9302c'});
                 $('.link-value').css({'border-color':'#c9302c'});
                 setTimeout(function () {
                     $('.link-value').val('').css({'border-color':'#ccc'});
-                    $('.add-link').html('Add').css({'backgroundColor':'#2fe387'});
+                    $('.add-link').html('Add').css({'backgroundColor':'#2fe387','borderColor':'#2fe387'});
                 },3000);
 
 
@@ -84,6 +86,7 @@ $(document).ready(function () {
     get_links();
     $('#add-work-btn').click(function () {
         $('#add-link').slideToggle(300);
+        $('.link-value').focus();
     });
     $('.add-link').click(function(){
        save_link();
