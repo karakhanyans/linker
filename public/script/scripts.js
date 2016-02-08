@@ -31,7 +31,6 @@ function get_links(){
                     '<a href="'+link.link+'" target="_blank" class="be-post-title">'+link.title+'</a>' +
                     '<span><a class="be-post-tag">'+link.tags+'</a></span>' +
                     '<div class="author-post">' +
-                    '<img src="img/a1.png" alt="" class="ava-author">' +
                     '<span>by <a href="page1.html">'+links.name+' '+links.lastname+'</a></span>' +
                     '</div>' +
                     '<div class="info-block">' +
