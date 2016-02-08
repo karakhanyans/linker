@@ -10,30 +10,32 @@ function get_links(){
         type:'POST',
         data: {_token: CSRF_TOKEN},
         success:function(data){
-           var links = data;
+
+           var links = JSON.parse(data)[0];
+
             if(links != undefined){
             $('#links-block').html('');
-            for(var i = 0;links.length > i;i++){
+                var link;
+            for(var i = 0;links.link.length > i;i++){
+                link = links.link[i];
                 $('#links-block').append('' +
                     '<div class="link col-ml-12 col-xs-6 col-sm-4">' +
-                    '<span class="link-delete close" data-id="'+links[i].id+'"><i class="fa fa-times"></i></span>' +
-                    '<a href="'+links[i].link+'" target="_blank">' +
+                    '<span class="link-delete close" data-id="'+link.id+'"><i class="fa fa-times"></i></span>' +
+                    '<a href="'+link.link+'" target="_blank">' +
                     '<div class="be-post">' +
-                    '<a href="'+links[i].link+'" target="_blank" class="be-img-block">' +
-                    '<img src="http://images.shrinktheweb.com/xino.php?stwembed=1&stwq=80&stwaccesskeyid=822eb21e7000cc0&stwsize=md&stwurl='+links[i].link+'" />' +
+                    '<a href="'+link.link+'" target="_blank" class="be-img-block">' +
+                    '<img src="http://images.shrinktheweb.com/xino.php?stwembed=1&stwq=80&stwaccesskeyid=822eb21e7000cc0&stwsize=md&stwurl='+link.link+'" />' +
                     '</a>' +
-                    '<a href="'+links[i].link+'" target="_blank" class="be-post-title">'+links[i].title+'</a>' +
-                    '<span><a class="be-post-tag">'+links[i].tags+'</a></span>' +
-                    //'<div class="author-post">' +
-                    //'<img src="img/a1.png" alt="" class="ava-author">' +
-                    //'<span>by <a href="page1.html">Hoang Nguyen</a></span>' +
-                    //'</div>' +
-                    //'<div class="info-block">' +
-                    //'<span><i class="fa fa-thumbs-o-up"></i> 360</span>' +
-                    //'<span><i class="fa fa-eye"></i> 789</span>' +
-                    //'<span><i class="fa fa-comment-o"></i> 20</span>' +
-                    //'</div>' +
-                    //'</div>' +
+                    '<a href="'+link.link+'" target="_blank" class="be-post-title">'+link.title+'</a>' +
+                    '<span><a class="be-post-tag">'+link.tags+'</a></span>' +
+                    '<div class="author-post">' +
+                    '<img src="img/a1.png" alt="" class="ava-author">' +
+                    '<span>by <a href="page1.html">'+links.name+' '+links.lastname+'</a></span>' +
+                    '</div>' +
+                    '<div class="info-block">' +
+                    '<span><i class="fa fa-eye"></i>'+link.views+'</span>' +
+                    '</div>' +
+                    '</div>' +
                     '</a>' +
                     '</div>');
             }

@@ -14,17 +14,16 @@ class UsersController extends Controller {
 	 */
 	public function index()
 	{
-
 		return view('profile.profile',compact('countries'));
 	}
 
 	public function get_links()
 	{
-		$links = User::find(Auth::user()->id)
-			->link()
+		$links = User::where('id',Auth::user()->id)
+			->with('link')
 			->orderBy('created_at','desc')
 			->get();
-		return $links;
+		return json_encode($links);
 	}
 
 	/**
