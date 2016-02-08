@@ -95,7 +95,9 @@ header { height: 70px; width: 100%; color: #fff; font-size: 14px; background: #2
 
 header .custom-container { position: relative; }
 
-header .row-header .brand-be { margin-top: 16.5px; float: left; }
+header .row-header .brand-be {
+    position: relative;
+    margin-top: 16.5px; float: left; }
 
 header .row-header .header-menu-block { position: absolute;
     top: 0px; left: 50%; -webkit-transform: translateX(-50%);
@@ -3780,4 +3782,15 @@ body .login-user-down:hover {
     top: 150px;
     left: 50%;
     margin-left: -20px;
+}
+.beta{
+    color: #fff;
+    cursor: default;
+    position: absolute;
+    top: 5px;
+    right: 33px;
+    font-size: 12px;
+}
+.beta:hover{
+    color: #fff;
 }

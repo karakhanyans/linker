@@ -52,6 +52,7 @@
 			<div class="brand-be">
 				<a href="{{ url('/') }}">
 					<img class="be_logo" src="{{ asset('/img/logo-green.png') }}" alt="logo2">
+					<span class="beta">beta</span>
 				</a>
 			</div>
 			@if (Auth::guest())
@@ -320,84 +321,84 @@
 			<div class="pagination hidden"></div>
 		</div>
 	</div>
-	<div class="footer-main">
-		<div class="container-fluid custom-container">
-			<div class="row">
-				<div class="col-md-3 col-xl-4">
-					<div class="footer-block">
-						<h1 class="footer-title">About Us</h1>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-						<ul class="soc_buttons">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-3 col-xl-2">
-					<div class="footer-block">
-						<h1 class="footer-title">Some Links</h1>
-						<div class="row footer-list-footer">
-							<div class="col-md-6">
-								<ul class="link-list">
-									<li><a href="about-us.html">About Us</a></li>
-									<li><a href="contact-us.html">Help</a></li>
-									<li><a href="contact-us.html">Contacts</a></li>
-									<li><a href="activity.html">Job</a></li>
-									<li><a href="activity.html">Projets</a></li>
-								</ul></div>
-							<div class="col-md-6">
-								<ul class="link-list">
-									<li><a href="activity.html">New Works</a></li>
-									<li><a href="author.html">Popular Authors</a></li>
-									<li><a href="author.html">New Authors</a></li>
-									<li><a href="people.html">Career</a></li>
-									<li><a href="faq.html">FAQ</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+	{{--<div class="footer-main">--}}
+		{{--<div class="container-fluid custom-container">--}}
+			{{--<div class="row">--}}
+				{{--<div class="col-md-3 col-xl-4">--}}
+					{{--<div class="footer-block">--}}
+						{{--<h1 class="footer-title">About Us</h1>--}}
+						{{--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>--}}
+						{{--<ul class="soc_buttons">--}}
+							{{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+							{{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+							{{--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>--}}
+							{{--<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>--}}
+							{{--<li><a href="#"><i class="fa fa-instagram"></i></a></li>--}}
+							{{--<li><a href="#"><i class="fa fa-linkedin"></i></a></li>--}}
+						{{--</ul>--}}
+					{{--</div>--}}
+				{{--</div>--}}
+				{{--<div class="col-md-3 col-xl-2">--}}
+					{{--<div class="footer-block">--}}
+						{{--<h1 class="footer-title">Some Links</h1>--}}
+						{{--<div class="row footer-list-footer">--}}
+							{{--<div class="col-md-6">--}}
+								{{--<ul class="link-list">--}}
+									{{--<li><a href="about-us.html">About Us</a></li>--}}
+									{{--<li><a href="contact-us.html">Help</a></li>--}}
+									{{--<li><a href="contact-us.html">Contacts</a></li>--}}
+									{{--<li><a href="activity.html">Job</a></li>--}}
+									{{--<li><a href="activity.html">Projets</a></li>--}}
+								{{--</ul></div>--}}
+							{{--<div class="col-md-6">--}}
+								{{--<ul class="link-list">--}}
+									{{--<li><a href="activity.html">New Works</a></li>--}}
+									{{--<li><a href="author.html">Popular Authors</a></li>--}}
+									{{--<li><a href="author.html">New Authors</a></li>--}}
+									{{--<li><a href="people.html">Career</a></li>--}}
+									{{--<li><a href="faq.html">FAQ</a></li>--}}
+								{{--</ul>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
+				{{--</div>--}}
 
-				<div class="col-md-3 pull-right">
-					<div class="footer-block">
-						<h1 class="footer-title">Subscribe On Our News</h1>
-						<form action="http://demo.nrgthemes.com/projects/nrgnetwork/" class="subscribe-form">
-							<input type="text" placeholder="Yout Name" required>
-							<div class="submit-block">
-								<i class="fa fa-envelope-o"></i>
-								<input type="submit" value="">
-							</div>
-						</form>
-						<div class="soc-activity">
-							<div class="soc_ico_triangle">
-								<i class="fa fa-twitter"></i>
-							</div>
-							<div class="message-soc">
-								<div class="date">16h ago</div>
-								<a href="blog-detail-2.html" class="account">@faq</a> vestibulum accumsan est <a href="blog-detail-2.html" class="heshtag">blog-detail-2.htmlmalesuada</a> sem auctor, eu aliquet nisi ornare leo sit amet varius egestas.
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				{{--<div class="col-md-3 pull-right">--}}
+					{{--<div class="footer-block">--}}
+						{{--<h1 class="footer-title">Subscribe On Our News</h1>--}}
+						{{--<form action="http://demo.nrgthemes.com/projects/nrgnetwork/" class="subscribe-form">--}}
+							{{--<input type="text" placeholder="Yout Name" required>--}}
+							{{--<div class="submit-block">--}}
+								{{--<i class="fa fa-envelope-o"></i>--}}
+								{{--<input type="submit" value="">--}}
+							{{--</div>--}}
+						{{--</form>--}}
+						{{--<div class="soc-activity">--}}
+							{{--<div class="soc_ico_triangle">--}}
+								{{--<i class="fa fa-twitter"></i>--}}
+							{{--</div>--}}
+							{{--<div class="message-soc">--}}
+								{{--<div class="date">16h ago</div>--}}
+								{{--<a href="blog-detail-2.html" class="account">@faq</a> vestibulum accumsan est <a href="blog-detail-2.html" class="heshtag">blog-detail-2.htmlmalesuada</a> sem auctor, eu aliquet nisi ornare leo sit amet varius egestas.--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
+				{{--</div>--}}
+			{{--</div>--}}
+		{{--</div>--}}
+	{{--</div>--}}
 	<div class="footer-bottom">
 		<div class="container-fluid custom-container">
 			<div class="col-md-12 footer-end clearfix">
 				<div class="left">
 					<span class="copy">© 2015. All rights reserved. <span class="white"><a href="#"> Linker</a></span></span>
-					<span class="created">Created by <span class="white"><a href="#">Sergey Karakhanyan</a></span></span>
+					<span class="created">Created by <span class="white"><a href="http://sergeykarakhanyan.com/" target="_blank">Sergey Karakhanyan</a></span></span>
 				</div>
-				<div class="right">
-					<a class="btn color-7 size-2 hover-9">About Us</a>
-					<a class="btn color-7 size-2 hover-9">Help</a>
-					<a class="btn color-7 size-2 hover-9">Privacy Policy</a>
-				</div>
+				{{--<div class="right">--}}
+					{{--<a class="btn color-7 size-2 hover-9">About Us</a>--}}
+					{{--<a class="btn color-7 size-2 hover-9">Help</a>--}}
+					{{--<a class="btn color-7 size-2 hover-9">Privacy Policy</a>--}}
+				{{--</div>--}}
 			</div>
 		</div>
 	</div>
