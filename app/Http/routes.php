@@ -14,10 +14,11 @@
 //Route::get('/', 'HomeController@index');
 //Route::get('/auth/register', 'HomeController@index');
 
-//Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('/', 'UsersController');
+	Route::get('home', 'UsersController@index');
 	Route::post('get_links','UsersController@get_links');
 	Route::post('/link/save', 'LinksController@store');
 	Route::delete('/link/delete/{id}', 'LinksController@destroy');
