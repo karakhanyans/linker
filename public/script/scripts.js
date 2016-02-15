@@ -26,7 +26,7 @@ function get_links(){
                     '<a href="'+link.link+'" target="_blank">' +
                     '<div class="be-post">' +
                     '<a href="'+link.link+'" target="_blank" class="be-img-block">' +
-                    '<img src="http://images.shrinktheweb.com/xino.php?stwembed=1&stwq=80&stwaccesskeyid=822eb21e7000cc0&stwsize=md&stwurl='+link.link+'" />' +
+                    '<iframe src="'+link.link+'" width="100%" height="auto">' +
                     '</a>' +
                     '<a href="'+link.link+'" target="_blank" class="be-post-title">'+link.title+'</a>' +
                     '<span><a class="be-post-tag">'+link.tags+'</a></span>' +
