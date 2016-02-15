@@ -40,6 +40,7 @@ function get_links(){
                     '</a>' +
                     '</div>');
             }
+                $('#links-block iframe body').css({'overflow':'hidden'});
                 $('.loading').delay(1000).fadeOut();
             }
         }
