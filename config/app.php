@@ -144,7 +144,11 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-
+		/*
+		 * Admin Service Providers...
+		 */
+		'SleepingOwl\Admin\AdminServiceProvider',
+		'SleepingOwl\AdminLteTemplate\AdminLteTemplateServiceProvider',
 	],
 
 	/*
@@ -192,6 +196,19 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+		/*
+		 * Admin Facades...
+		 */
+		'Admin'         => 'SleepingOwl\Admin\Admin',
+		'AdminAuth'     => 'SleepingOwl\AdminAuth\Facades\AdminAuth',
+		'Column'        => 'SleepingOwl\Admin\Columns\Column',
+		'ColumnFilter'  => 'SleepingOwl\Admin\ColumnFilters\ColumnFilter',
+		'Filter'        => 'SleepingOwl\Admin\Filter\Filter',
+		'AdminDisplay'  => 'SleepingOwl\Admin\Display\AdminDisplay',
+		'AdminForm'     => 'SleepingOwl\Admin\Form\AdminForm',
+		'AdminTemplate' => 'SleepingOwl\Admin\Templates\Facade\AdminTemplate',
+		'FormItem'      => 'SleepingOwl\Admin\FormItems\FormItem',
+
 
 	],
 
