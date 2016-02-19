@@ -17,7 +17,7 @@ Admin::model('App\User')->title('Users')->display(function ()
 		Column::count('link')->label('Links count'),
 	]);
 	return $display;
-})->edit(function ()
+})->createAndEdit(function ()
 {
 	$form = AdminForm::form();
 	$form->items([
@@ -25,4 +25,4 @@ Admin::model('App\User')->title('Users')->display(function ()
 		FormItem::text('email', 'Email')->required()->unique(),
 	]);
 	return $form;
-})->delete(null);
+});
