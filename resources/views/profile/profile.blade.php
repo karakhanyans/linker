@@ -58,7 +58,7 @@
                                         <a href="<% link.link %>" target="_blank">
                                             <div class="be-post">
                                                 <a href="<% link.link %>" target="_blank" class="be-img-block">
-                                                    <iframe ng-src="<% link.link %>"></iframe>
+                                                    <iframe src="<% link.link %>"></iframe>
                                                     </a>
                                                 <a href="<% link.link %>" target="_blank" class="be-post-title"><% link.title %></a>
                                                 <span><a class="be-post-tag"><% link.tags %></a></span>
