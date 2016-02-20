@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <div id="content-block">
+    <div id="content-block" ng-app="myLinkApp">
         <div class="container be-detail-container">
             <div class="row">
                 <div class="col-xs-12 col-md-4 left-feild">
@@ -44,14 +44,34 @@
                             {{--</div>--}}
                         </div>
 
+
                         <div class="tabs-content clearfix">
-                            <div class="loading">
-                                <div class="load-icon">
-                                    <i class="fa fa-refresh fa-spin fa-2x text-success"></i>
-                                </div>
-                            </div>
+                            {{--<div class="loading">--}}
+                                {{--<div class="load-icon">--}}
+                                    {{--<i class="fa fa-refresh fa-spin fa-2x text-success"></i>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="tab-info active">
-                                <div id="links-block" class="row"></div>
+                                <div id="links-block" class="row" ng-controller="LinkController">
+                                    <div class="link col-ml-12 col-xs-6 col-sm-4" ng-repeat="link in links">
+                                        <span class="link-delete close" data-id="<% link.id %>"><i class="fa fa-times"></i></span>
+                                        <a href="<% link.link %>" target="_blank">
+                                            <div class="be-post">
+                                                <a href="<% link.link %>" target="_blank" class="be-img-block">
+                                                    <iframe ng-src="<% link.link %>"></iframe>
+                                                    </a>
+                                                <a href="<% link.link %>" target="_blank" class="be-post-title"><% link.title %></a>
+                                                <span><a class="be-post-tag"><% link.tags %></a></span>
+                                                <div class="author-post">
+                                                    <span>by <a href="page1.html"><% link.user.name %> <%link.user.lastname %></a></span>
+                                                    </div>
+                                                <div class="info-block">
+                                                    <span><i class="fa fa-eye"></i><% link.views %></span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                </div>
                             </div>
                             <div class="tab-info">
                                 <div class="row">

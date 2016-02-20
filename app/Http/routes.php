@@ -19,8 +19,9 @@ Route::get('home', 'HomeController@index');
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('/', 'UsersController');
 	Route::get('home', 'UsersController@index');
-	Route::post('get_links','UsersController@get_links');
+	Route::get('get_links','UsersController@get_links');
 	Route::post('/link/save', 'LinksController@store');
+	Route::get('/link/get_links', 'LinksController@get_all_links');
 	Route::delete('/link/delete/{id}', 'LinksController@destroy');
 });
  Route::controllers([

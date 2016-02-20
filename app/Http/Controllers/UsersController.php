@@ -23,7 +23,7 @@ class UsersController extends Controller {
 			->with('link')
 			->orderBy('created_at','desc')
 			->get();
-		return json_encode($links);
+		return $links;
 	}
 
 	/**

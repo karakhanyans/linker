@@ -83,7 +83,7 @@ function save_link(){
 
 $(document).ready(function () {
 
-    get_links();
+    //get_links();
     $('#add-work-btn').click(function () {
         $('#add-link').slideToggle(300);
         $('.link-value').focus();

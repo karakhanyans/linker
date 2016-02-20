@@ -18,6 +18,14 @@ class LinksController extends Controller {
 		//
 	}
 
+	public function get_all_links()
+	{
+		$links = Link::where('user_id',Auth::user()->id)
+			->with('user')
+			->orderBy('created_at','desc')
+			->get();
+		return $links;
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
