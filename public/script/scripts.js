@@ -3,6 +3,7 @@
  */
 var $ = jQuery.noConflict();
 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
 function get_links(){
     $('.loading').show();
     $.ajax({
@@ -10,9 +11,7 @@ function get_links(){
         type:'POST',
         data: {_token: CSRF_TOKEN},
         success:function(data){
-
            var links = JSON.parse(data)[0];
-
             if(links != undefined){
             $('#links-block').html('');
                 var link;
@@ -26,7 +25,7 @@ function get_links(){
                     '<a href="'+link.link+'" target="_blank">' +
                     '<div class="be-post">' +
                     '<a href="'+link.link+'" target="_blank" class="be-img-block">' +
-                    '<iframe src="'+link.link+'"></iframe>' +
+                    //'<iframe src="'+link.link+'"></iframe>' +
                     '</a>' +
                     '<a href="'+link.link+'" target="_blank" class="be-post-title">'+link.title+'</a>' +
                     '<span><a class="be-post-tag">'+link.tags+'</a></span>' +
@@ -46,6 +45,7 @@ function get_links(){
         }
     });
 }
+
 function save_link(){
     var link_value = $('.link-value').val();
     if(link_value.length > 0){
@@ -83,11 +83,13 @@ function save_link(){
 
 $(document).ready(function () {
 
-    //get_links();
+    get_links();
+
     $('#add-work-btn').click(function () {
         $('#add-link').slideToggle(300);
         $('.link-value').focus();
     });
+
     $('.add-link').click(function(){
        save_link();
     });

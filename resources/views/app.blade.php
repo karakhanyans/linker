@@ -87,7 +87,7 @@
 									<div class="form-group">
 										<div class="input-group">
 											<input type="text" class="form-control link-value">
-											<span class="add-link input-group-addon">Add</span>
+											<span class="add-link input-group-addon">Add Link</span>
 										</div>
 									</div>
 
@@ -177,10 +177,10 @@
 							<img class="login-user" src="img/login.jpg" alt="">
 							<span class="be-dropdown-content">Hi, <span>{!! Auth::user()->name !!}</span></span>
 							<div class="drop-down-list a-list">
-								<a href="activity.html">My Portfolio</a>
-								<a href="statictics.html">Statistics </a>
-								<a href="about-us.html">Work Experience</a>
-								<a href="author-edit.html">Account Settings</a>
+								{{--<a href="activity.html">My Portfolio</a>--}}
+								{{--<a href="statictics.html">Statistics </a>--}}
+								{{--<a href="about-us.html">Work Experience</a>--}}
+								{{--<a href="author-edit.html">Account Settings</a>--}}
 								<a href="{{ url('auth/logout') }}">Logout</a>
 							</div>
 						</div>
