@@ -12,6 +12,8 @@ class Link extends Model {
         'image',
         'tags',
         'views',
+        'url',
+        'icon'
     ];
     public function user()
     {

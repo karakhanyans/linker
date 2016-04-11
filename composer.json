@@ -22,7 +22,8 @@
 			"App\\": "app/"
 		},
 	  "files": [
-		"app/Parser/simple_html_dom.php"
+		"app/Parser/simple_html_dom.php",
+		"app/Helpers/MyHelper.php"
 	  ]
 	},
 

@@ -4,7 +4,7 @@
     <div id="content-block">
         <div class="container be-detail-container">
             <div class="row">
-                <div class="col-xs-12 col-md-4 left-feild">
+                <div class="col-xs-12 col-md-3 left-feild">
                     <div class="be-user-block style-3">
                         <div class="be-user-detail">
                             <a class="be-ava-user style-2" href="page1.html">
@@ -25,7 +25,7 @@
 
                     <a class="btn full color-1 size-1 hover-1"><i class="fa fa-plus"></i>add category</a>
                 </div>
-                <div class="col-xs-12 col-md-8">
+                <div class="col-xs-12 col-md-9">
                     <div class="tab-wrapper style-1">
                         <div class="tab-nav-wrapper">
                             {{--<div  class="nav-tab  clearfix">--}}
@@ -53,7 +53,7 @@
                             </div>
                             <div class="tab-info active">
                                 {{--ng-controller="LinkController"--}}
-                                <div id="links-block" class="row">
+                                <div id="links-block" class="masonry row">
                                     {{--ng-repeat="link in links"--}}
 
                                 </div>

@@ -3,7 +3,11 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
+use Illuminate\Cookie\CookieJar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller {
 
@@ -34,7 +38,7 @@ class AuthController extends Controller {
 		$this->redirectTo = 'list';
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
-	public function login()
+	public function login(Request $request)
 	{
 		return view('auth.login');
 	}

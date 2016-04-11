@@ -420,9 +420,11 @@
 	<script src="{{ asset('/script/jquery.viewportchecker.min.js') }}"></script>
 	<script src="{{ asset('/script/filters.js') }}"></script>
 	<script src="{{ asset('/script/global.js') }}"></script>
-	<script src="{{ asset('/script/scripts.js') }}"></script>
-	<script src="{{ asset('/script/angular/app.js') }}"></script>
-	<script src="{{ asset('/script/angular/controllers/LinkController.js') }}"></script>
+<script src="{{ asset('/script/masonry.min.js') }}"></script>
+<script src="{{ asset('/script/scripts.js') }}"></script>
+<script src="{{ asset('/script/angular/app.js') }}"></script>
+<script src="{{ asset('/script/angular/controllers/LinkController.js') }}"></script>
+
 </body>
 
 </html>

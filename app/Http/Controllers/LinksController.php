@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Parser\simply_html_dom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use \MyHelper as Helper;
 class LinksController extends Controller {
 
 	/**
@@ -44,6 +44,7 @@ class LinksController extends Controller {
 	public function store(Request $request)
 	{
 		$link = $request->all();
+
 		$linkInform = file_get_html($link['link']);
 
 		$data['link']  = $link['link'];
@@ -51,14 +52,27 @@ class LinksController extends Controller {
 		$data['title'] = $linkInform->find('title',0)->innertext;
 		$tags = $linkInform->find('meta[name="keywords"]',0);
 		$description = $linkInform->find('meta[name="description"]',0);
+		$image = $linkInform->find('meta[property="og:image"]',0);
+		$icon = $linkInform->find('link[rel*="shortcut"]',0);
+		if(!empty($image)){
+			$data['image'] = $image->content;
+		}
+		if(!empty($icon)){
+			$data['icon'] = $icon->href;
+		}else{
+			$icon = $linkInform->find('link[rel*="icon"]',0);
+			if(!empty($icon)){
+				$data['icon'] = $icon->href;
+			}
+		}
 		if(!empty($tags)){
-			$data['tags'] = $tags->content;
+			$data['tags'] = str_limit($tags->content, $limit = 70, $end = '...');
 		}elseif(!empty($description)){
 			$data['tags'] = $description->content;
 		}else{
 			$data['tags'] = '';
 		}
-
+		$data['url'] = Helper::url($link['link']);
 		if(Link::firstOrCreate($data)){
 			echo 'true';
 		}else{

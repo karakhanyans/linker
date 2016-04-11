@@ -17,30 +17,36 @@ function get_links(){
                 var link;
                 var link_count = links.link.length;
                 $('.links_count').html(link_count);
+                links.link.reverse();
             for(var i = 0;links.link.length > i;i++){
                 link = links.link[i];
                 $('#links-block').append('' +
-                    '<div class="link col-ml-12 col-xs-6 col-sm-4">' +
+                    '<div class="link col-md-4 col-xs-6 col-sm-4">' +
                     '<span class="link-delete close" data-id="'+link.id+'"><i class="fa fa-times"></i></span>' +
                     '<a href="'+link.link+'" target="_blank">' +
                     '<div class="be-post">' +
                     '<a href="'+link.link+'" target="_blank" class="be-img-block">' +
-                    '<iframe src="'+link.link+'"></iframe>' +
+                    ''+(((link.image != ''))?'<img src="'+link.image+'"></img>':'')+
                     '</a>' +
                     '<a href="'+link.link+'" target="_blank" class="be-post-title">'+link.title+'</a>' +
                     '<span><a class="be-post-tag">'+link.tags+'</a></span>' +
-                    '<div class="author-post">' +
-                    '<span>by <a href="page1.html">'+links.name+' '+links.lastname+'</a></span>' +
-                    '</div>' +
+                    //'<div class="author-post">' +
+                    //'<span>by <a href="page1.html">'+links.name+' '+links.lastname+'</a></span>' +
+                    //'</div>' +
                     '<div class="info-block">' +
-                    '<span><i class="fa fa-eye"></i>'+link.views+'</span>' +
+                    '<span>'+(((link.icon != ''))?'<img src="'+link.icon+'"></img>':'<i class="fa fa-link"></i>')+
+                    ''+link.url+'</span>' +
                     '</div>' +
                     '</div>' +
                     '</a>' +
                     '</div>');
             }
                 $('iframe body').css({'overflow':'hidden'});
-                $('.loading').delay(1000).fadeOut();
+                $('.loading').delay(1000).fadeOut(200,function(){
+                    $('#links-block').masonry({
+                        itemSelector: '.link'
+                    });
+                });
             }
         }
     });
@@ -82,8 +88,9 @@ function save_link(){
 }
 
 $(document).ready(function () {
-
     get_links();
+
+
 
     $('#add-work-btn').click(function () {
         $('#add-link').slideToggle(300);
