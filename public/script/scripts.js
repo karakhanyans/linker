@@ -114,7 +114,11 @@ $(document).ready(function () {
             data: {_method:'DELETE',_token: CSRF_TOKEN},
             success: function (data) {
                 if(data == 'true'){
-                    link.parent().fadeOut();
+                    link.parent().fadeOut(200,function(){
+                        $('#links-block').masonry({
+                            itemSelector: '.link'
+                        });
+                    });
                 }else{
                     alert('false');
                 }

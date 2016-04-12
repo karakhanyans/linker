@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
-
+use Laravel\Socialite\Facades\Socialite;
 class AuthController extends Controller {
 
 	/*
@@ -41,6 +41,26 @@ class AuthController extends Controller {
 	public function login(Request $request)
 	{
 		return view('auth.login');
+	}
+	public function redirectToProvider()
+	{
+		return Socialite::driver('facebook')->redirect();
+	}
+	public function handleProviderCallback()
+	{
+		$user = Socialite::driver('facebook')->user();
+
+		$name = explode(' ',$user->getName());
+		$data['name'] = $name[0];
+		$data['lastname'] = $name[1];
+		$data['email'] = $user->getEmail();
+		$data['password'] = str_random(8);
+		$data['facebook'] = true;
+		$this->auth->login($this->registrar->create($data));
+
+		return redirect($this->redirectTo);
+
+		// $user->token;
 	}
 
 }

@@ -149,6 +149,11 @@ return [
 		 */
 		'SleepingOwl\Admin\AdminServiceProvider',
 		'SleepingOwl\AdminLteTemplate\AdminLteTemplateServiceProvider',
+
+		/*
+		 * Socialite Service Provider
+		 */
+		'Laravel\Socialite\SocialiteServiceProvider'
 	],
 
 	/*
@@ -210,6 +215,10 @@ return [
 		'FormItem'      => 'SleepingOwl\Admin\FormItems\FormItem',
 
 
+		/*
+		 * Socialite Facade
+		 */
+		'Socialize' => 'Laravel\Socialite\Facades\Socialite',
 	],
 
 ];

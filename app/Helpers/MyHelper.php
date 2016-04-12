@@ -6,4 +6,5 @@ class MyHelper{
         $parse = parse_url($url);
         return $parse['host'];
     }
+
 }

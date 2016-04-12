@@ -3,7 +3,7 @@
 use App\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-
+use Illuminate\Support\Facades\Mail;
 class Registrar implements RegistrarContract {
 
 	/**
@@ -30,6 +30,18 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+		if($data['facebook'] == true){
+			$user = User::where('email',$data['email'])->first();
+			if(count($user) > 0){
+				return $user;
+			}
+		}
+		Mail::send('emails.welcome', $data, function($message) use ($data)
+		{
+			$message->subject("Welcome to Linker");
+			$message->to($data['email']);
+		});
+
 		return User::create([
 			'name' => $data['name'],
 			'lastname' => $data['lastname'],

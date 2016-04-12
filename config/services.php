@@ -34,4 +34,9 @@ return [
 		'secret' => '',
 	],
 
+	'facebook' => [
+		'client_id' => '510731655795453',
+		'client_secret' => '48c67cb8508f37acb5041a54662eb11f',
+		'redirect' => 'http://linker.dev/auth/facebookUser',
+	],
 ];

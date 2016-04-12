@@ -7,7 +7,7 @@
 		<div class="head-bg-img"></div>
 		<div class="head-bg-content">
 			<h1>Your Best Place to Save Anything You Like</h1>
-			{{--<a class="btn color-1 size-1 hover-1" ><i class="fa fa-facebook"></i>sign up via facebook</a>--}}
+			<a href="{{ url('auth/facebook') }}" class="btn color-1 size-1 hover-1" ><i class="fa fa-facebook"></i>sign up via facebook</a>
 			<a class="be-register btn color-3 size-1 hover-6"><i class="fa fa-lock"></i>sign up now</a>
 		</div>
 	</div>
