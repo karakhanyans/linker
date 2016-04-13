@@ -30,7 +30,7 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		if($data['facebook'] == true){
+		if(isset($data['facebook']) && $data['facebook'] == true){
 			$user = User::where('email',$data['email'])->first();
 			if(count($user) > 0){
 				return $user;
