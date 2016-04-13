@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => '', 'name' => 'Linker'],
+	'from' => ['address' => 'linker@sergeykarakhanyan.com', 'name' => 'Linker'],
 
 	/*
 	|--------------------------------------------------------------------------
