@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Cookie\CookieJar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
@@ -42,6 +43,25 @@ class AuthController extends Controller {
 	{
 		return view('auth.login');
 	}
+
+	public function apiLogin(Request $request)
+	{
+
+		$this->validate($request, [
+			'email' => 'required|email', 'password' => 'required',
+		]);
+
+		$credentials = $request->only('email', 'password');
+
+		if ($this->auth->attempt($credentials, $request->has('remember')))
+		{
+			return response()->json(['status','true']);
+		}
+
+		return response()->json(['status','false']);
+
+	}
+
 	public function redirectToProvider()
 	{
 		return Socialite::driver('facebook')->redirect();
