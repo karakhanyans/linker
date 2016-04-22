@@ -35,9 +35,12 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
-			return new RedirectResponse(url('/list'));
+			if($request->get('_type') == 'AJAX'){
+				return response()->json(['status' => 'success','user' =>$this->auth->user()]);
+			}else{
+				return new RedirectResponse(url('/list'));
+			}
 		}
-
 		return $next($request);
 	}
 

@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Input;
 class AuthController extends Controller {
 
 	/*
@@ -55,10 +56,10 @@ class AuthController extends Controller {
 
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
-			return response()->json(['status','true']);
+			return response()->json(['status' => 'success','user' => $this->auth->user()]);
 		}
+		return response()->json(['status' => 'false','message' => $this->getFailedLoginMessage()]);
 
-		return response()->json(['status','false']);
 
 	}
 
