@@ -62,7 +62,19 @@ class AuthController extends Controller {
 
 
 	}
+	public function apiRegister(Request $request)
+	{
+		$validator = $this->registrar->validator($request->all());
 
+		if ($validator->fails())
+		{
+			$this->throwValidationException(
+				$request, $validator
+			);
+		}
+		$this->auth->login($this->registrar->create($request->all()));
+		return response()->json(['status' => 'success','user' => $this->auth->user()]);
+	}
 	public function redirectToProvider()
 	{
 		return Socialite::driver('facebook')->redirect();
