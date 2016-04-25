@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers\Auth;
-
+use App\Link;
+use App\User;
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
@@ -56,7 +58,13 @@ class AuthController extends Controller {
 
 		if ($this->auth->attempt($credentials, $request->has('remember')))
 		{
-			return response()->json(['status' => 'success','user' => $this->auth->user()]);
+			$api_token = Str::random(60);
+			User::where('id',$this->auth->user()->id)->update(['api_token' => $api_token]);
+			$links = Link::where('user_id',$this->auth->user()->id)
+				->with('user')
+				->orderBy('created_at','desc')
+				->get();
+			return response()->json(['status' => 'success','user' => $this->auth->user(),'links' => $links, 'api_token' => $api_token]);
 		}
 		return response()->json(['status' => 'false','message' => $this->getFailedLoginMessage()]);
 
@@ -73,7 +81,13 @@ class AuthController extends Controller {
 			);
 		}
 		$this->auth->login($this->registrar->create($request->all()));
-		return response()->json(['status' => 'success','user' => $this->auth->user()]);
+		$api_token = Str::random(60);
+		User::where('id',$this->auth->user()->id)->update(['api_token' => $api_token]);
+		$links = Link::where('user_id',$this->auth->user()->id)
+			->with('user')
+			->orderBy('created_at','desc')
+			->get();
+		return response()->json(['status' => 'success','user' => $this->auth->user(),'links' => $links, 'api_token' => $api_token]);
 	}
 	public function redirectToProvider()
 	{

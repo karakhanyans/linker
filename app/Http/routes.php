@@ -19,6 +19,8 @@ Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/facebookUser', 'Auth\AuthController@handleProviderCallback');
 Route::post('/api/login','Auth\AuthController@apiLogin');
 Route::post('/api/signup','Auth\AuthController@apiRegister');
+Route::post('/api/links','ApiController@get_all_links');
+Route::post('/api/isLoggedIn','ApiController@isLoggedIn');
 Route::group(['middleware' => ['auth','csrf']], function () {
 	Route::resource('list', 'UsersController');
 	Route::get('home', 'UsersController@index');
