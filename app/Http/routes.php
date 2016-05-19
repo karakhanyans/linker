@@ -23,6 +23,7 @@ Route::post('/api/signup','Auth\AuthController@apiRegister');
 Route::post('/api/links','ApiController@get_all_links');
 Route::post('/api/isLoggedIn','ApiController@isLoggedIn');
 Route::post('/api/delete/{id}','ApiController@delete');
+Route::post('/api/add','ApiController@addLink');
 
 Route::group(['middleware' => ['auth','csrf']], function () {
 	Route::resource('list', 'UsersController');
