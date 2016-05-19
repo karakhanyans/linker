@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use PhpSpec\Exception\Exception;
 
 
 class ApiController extends Controller {
@@ -37,5 +38,27 @@ class ApiController extends Controller {
        }else{
            return response()->json(['status' => 'false']);
        }
+    }
+
+    public function delete($id)
+    {
+        dd($id);
+        try{
+
+            $token = Input::get('token');
+            $email = Input::get('email');
+
+            $link = Link::whereHas('user',function($query) use ($token,$email){
+                $query->where(['api_token' => $token,'email' => $email]);
+            })->where('id',$id)->first();
+
+            if($link->delete()){
+                return response()->json(['status' => 'success']);
+            }else{
+                throw new Exception('Link wasn\'t deleted!');
+            }
+        }catch(Exception $e){
+            return response()->json(['status' => 'false','message' => $e->getMessage()]);
+        }
     }
 }
