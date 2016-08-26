@@ -98,8 +98,8 @@ class ApiController extends Controller {
                 $data['tags'] = '';
             }
             $data['url'] = Helper::url($link['link']);
-            if(Link::firstOrCreate($data)){
-                return response()->json(['status' => 'success','link' => $data]);
+            if($link = Link::firstOrCreate($data)){
+                return response()->json(['status' => 'success','link' => $link]);
             }else{
                 throw new Exception('Error');
             }
